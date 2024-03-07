@@ -46,7 +46,7 @@ $ ./server
 Execute the client (client needs server's PID) and a "string" you want to send to the server
 
 ```
-$ ./client 2114751 "hello world"
+$ ./client <PID of server> "hello world"
 ```
 
 # 📑 Index
