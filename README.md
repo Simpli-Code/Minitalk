@@ -9,7 +9,7 @@ We must create a communication program in the form of a client and a server.
 
 • The server PID and
 
-• The string to send.
+• A string to send.
 
 • The client must send the string passed as a parameter to the server.
 
