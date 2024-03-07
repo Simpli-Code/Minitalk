@@ -43,7 +43,7 @@ Execute first the server! The server will print it's PID and wait's for client's
 $ ./server
 ```
 
-Execute client (client needs server's PID) and a "string" you want to send to the server
+Execute the client (client needs server's PID) and a "string" you want to send to the server
 
 ```
 $ ./client 2114751 "hello world"
