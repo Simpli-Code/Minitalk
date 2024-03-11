@@ -6,7 +6,7 @@
 /*   By: chruhin <chruhin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 11:15:27 by chruhin           #+#    #+#             */
-/*   Updated: 2024/03/06 15:04:16 by chruhin          ###   ########.fr       */
+/*   Updated: 2024/03/11 08:47:54 by chruhin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define MAX_BUFF 9096
+# define MAX_BUFF	9096
+# define MSG		"\e[1;32mWaiting for Client's Message \e[0m\n"
+# define ERR_MSG	"\e[1;31mInvalid input, Please enter: \
+Server's PID and a message <string>\e[0m\n"
 
 void	ft_server(void);
 void	ft_putnbr(int num);
-void	handle_error_msg(void);
+size_t	ft_strlen(char *str);
+void	handle_err_exit(void);
 int		ft_atoi(const char *s);
 void	ft_sig_handler(int sig);
 void	ft_bzero(void *s, size_t n);
