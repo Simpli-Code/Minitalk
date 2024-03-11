@@ -6,7 +6,7 @@
 /*   By: chruhin <chruhin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 12:00:10 by chruhin           #+#    #+#             */
-/*   Updated: 2024/03/06 15:04:00 by chruhin          ###   ########.fr       */
+/*   Updated: 2024/03/11 08:42:56 by chruhin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ int	main(void)
 
 void	ft_server(void)
 {
-	int	pid;
+	int		pid;
 
 	pid = getpid();
 	write(1, "PID: ", 5);
 	ft_putnbr(pid);
 	write(1, "\n", 1);
-	write(1, "Waiting for Client's Signal \n", 29);
+	write(1, MSG, ft_strlen(MSG));
 }
 
 static void	ft_put_c_to_s(unsigned char c)

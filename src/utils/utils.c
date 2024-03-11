@@ -6,7 +6,7 @@
 /*   By: chruhin <chruhin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:46:36 by chruhin           #+#    #+#             */
-/*   Updated: 2024/03/06 15:04:08 by chruhin          ###   ########.fr       */
+/*   Updated: 2024/03/11 08:46:49 by chruhin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,13 @@ int	ft_atoi(const char *s)
 		i++;
 	}
 	if (s[i] != '\0')
-		handle_error_msg();
+		handle_err_exit();
 	return (sum * sign);
 }
 
-void	handle_error_msg(void)
+void	handle_err_exit(void)
 {
-	write(2, "Invalid input, Please enter: Server's PID  \"string\"\n", 54);
+	write(2, ERR_MSG, ft_strlen(ERR_MSG));
 	exit (EXIT_FAILURE);
 }
 
@@ -82,4 +82,16 @@ void	ft_bzero(void *s, size_t n)
 		dest[i] = '\0';
 		i++;
 	}
+}
+
+size_t	ft_strlen(char *str)
+{
+	size_t	i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i])
+		i++;
+	return (i);
 }

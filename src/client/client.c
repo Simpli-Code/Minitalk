@@ -6,7 +6,7 @@
 /*   By: chruhin <chruhin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 12:00:15 by chruhin           #+#    #+#             */
-/*   Updated: 2024/03/06 15:04:22 by chruhin          ###   ########.fr       */
+/*   Updated: 2024/03/11 08:22:41 by chruhin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	main(int argc, char *argv[])
 {
 	signal(SIGUSR2, &ft_sig_handler);
 	if (argc != 3)
-		handle_error_msg();
+		handle_err_exit();
 	else if (argv[2][0] == '\0')
-		handle_error_msg();
+		handle_err_exit();
 	else
 	{
 		ft_client(argv[1], argv[2]);
@@ -35,7 +35,7 @@ void	ft_client(const char *pid, char *str)
 
 	i = 0;
 	if (ft_atoi(pid) <= 0)
-		handle_error_msg();
+		handle_err_exit();
 	else
 	{
 		server_pid = ft_atoi(pid);
@@ -55,7 +55,7 @@ void	ft_send_bits(int server_pid, unsigned int byte)
 
 	i = 0;
 	if (kill(server_pid, 0) == -1)
-		handle_error_msg();
+		handle_err_exit();
 	while (i < 8)
 	{
 		l_var = g_var;
